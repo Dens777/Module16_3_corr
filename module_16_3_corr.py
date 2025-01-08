@@ -22,7 +22,7 @@ async def create_user(username: str=Path(min_length=5, max_length=20, descriptio
 @app.put("/user/{user_id}/{username}/{age}")
 def update_user(user_id: str=Path(min_length=1, max_length=2000, description="Enter id", example="1"),
                 username: str=Path(min_length=5, max_length=20, description="Enter your username", example="UrbanUser"),
-                age: int=Path(ge=18, le=100, description="Enter your age", example="44")) -> str:
+                age: int=Path(ge=18, le=100, description="Enter your age", example="45")) -> str:
     users[user_id] = f"Имя: {username}, возраст: {age}"
     return f"User {user_id} has been updated"
 
